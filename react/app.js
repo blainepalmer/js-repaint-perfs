@@ -7,14 +7,15 @@ var DBMon = React.createClass({
     };
   },
 
-  loadSamples: function () {
+  loadSamples: function (event) {
+    if(event.data != 'testPM') return;
     this.setState({ databases: ENV.generateData().toArray() });
     Monitoring.renderRate.ping();
-    setTimeout(this.loadSamples, ENV.timeout);
+    window.postMessage('testPM', '*')
   },
 
   componentDidMount: function() {
-    this.loadSamples();
+    window.addEventListener('message', this.loadSamples, false);
   },
 
   render: function() {
