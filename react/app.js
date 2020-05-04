@@ -1,5 +1,4 @@
 /** @jsx React.DOM */
-var createReactClass = require('create-react-class');
 
 var DBMon = createReactClass({
   getInitialState: function() {
