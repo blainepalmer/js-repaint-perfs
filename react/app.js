@@ -16,6 +16,7 @@ var DBMon = React.createClass({
 
   componentDidMount: function() {
     window.addEventListener('message', this.loadSamples, false);
+    window.postMessage('testPM', '*')
   },
 
   render: function() {
