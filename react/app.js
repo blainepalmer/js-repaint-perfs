@@ -1,6 +1,7 @@
 /** @jsx React.DOM */
+var createReactClass = require('create-react-class');
 
-var DBMon = React.createClass({
+var DBMon = createReactClass({
   getInitialState: function() {
     return {
       databases: []
